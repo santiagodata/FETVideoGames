@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import {Component, OnInit} from '@angular/core';
 import {Videojuego, VideojuegosService} from "../../services/videojuegos.service";
 import {Router} from "@angular/router";
 
@@ -9,16 +9,17 @@ import {Router} from "@angular/router";
 })
 export class VideojuegosComponent implements OnInit {
 
-  videojuegos: Videojuego[]=[];
+  videojuegos: Videojuego[] = [];
 
   constructor(private _videojuegosService: VideojuegosService,
-              private router:Router) { }
+              private router: Router) {
+  }
 
   ngOnInit(): void {
     this.videojuegos = this._videojuegosService.getVideojuegos();
   }
 
-  verVideojuego(idx:number){
+  verVideojuego(idx: number) {
     this.router.navigate(['/videojuego/', idx]);
   }
 }

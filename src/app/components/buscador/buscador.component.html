@@ -1,4 +1,4 @@
-<h1>Buscando: <small> {{termino}} </small> </h1>
+<h1>Buscando: <small> {{termino}} </small></h1>
 <hr>
 
 <div class="row" *ngIf="videojuegos.length == 0">
@@ -17,7 +17,8 @@
       <h4 class="card-title">{{videojuego.nombre}}</h4>
       <p class="card-text"><small class="text-muted">{{videojuego.lanzamiento}}</small></p>
 
-      <button (click)="verVideojuego(i)" type= "button" class="btn btn-outline-primary btn-block">Ver más...</button>
+      <button (click)="verVideojuegoBuscado(i)" type="button" class="btn btn-outline-primary btn-block">Ver más...
+      </button>
 
     </div>
   </div>

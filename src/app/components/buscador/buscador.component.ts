@@ -1,7 +1,8 @@
-import { Component, OnInit } from '@angular/core';
+import {Component, OnInit} from '@angular/core';
 import {ActivatedRoute} from "@angular/router";
 import {VideojuegosService} from "../../services/videojuegos.service";
 import {Router} from "@angular/router";
+import {identity} from "rxjs";
 
 
 @Component({
@@ -11,24 +12,27 @@ import {Router} from "@angular/router";
 })
 export class BuscadorComponent implements OnInit {
 
-  videojuegos: any[]=[];
+  videojuegos: any[] = [];
   termino: string;
 
 
-  constructor(private activatedRoute:ActivatedRoute,
+  constructor(private activatedRoute: ActivatedRoute,
               private _videojuegosService: VideojuegosService,
-              private router:Router) { this.termino=""}
+              private router: Router) {
+    this.termino = ""
+  }
 
   ngOnInit() {
-    this.activatedRoute.params.subscribe(params=>{
+    this.activatedRoute.params.subscribe(params => {
       this.termino = params['termino'];
       this.videojuegos = this._videojuegosService.buscarVideojuegos(params['termino']);
       console.log(this.videojuegos);
     });
   }
 
-  verVideojuego(termino:number){
-    this.router.navigate(['/videojuego/', termino]);
+  verVideojuegoBuscado(idx: number) {
+    this.router.navigate(['/videojuego/', idx]);
+    console.log("se ejecuta esta vuelta");
   }
 
 }

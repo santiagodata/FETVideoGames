@@ -14,12 +14,12 @@ export class VideojuegoComponent {
 
   constructor(private _videojuegosService: VideojuegosService,
               private activatedRoute: ActivatedRoute) {
-    this.activatedRoute.params.subscribe( params => {
+    this.activatedRoute.params.subscribe(params => {
       this.videojuego = this._videojuegosService.getVideojuego
       (params['id']);
     });
-    }
   }
+}
 
 
 
