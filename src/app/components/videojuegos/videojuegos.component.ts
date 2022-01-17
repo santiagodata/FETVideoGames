@@ -1,6 +1,6 @@
-import {Component, OnInit} from '@angular/core';
-import {Videojuego, VideojuegosService} from "../../services/videojuegos.service";
-import {Router} from "@angular/router";
+import { Component, OnInit } from '@angular/core';
+import { Videojuego, VideojuegosService } from "../../services/videojuegos.service";
+import { Router } from "@angular/router";
 
 @Component({
   selector: 'app-videojuegos',
@@ -12,7 +12,7 @@ export class VideojuegosComponent implements OnInit {
   videojuegos: Videojuego[] = [];
 
   constructor(private _videojuegosService: VideojuegosService,
-              private router: Router) {
+    private router: Router) {
   }
 
   ngOnInit(): void {

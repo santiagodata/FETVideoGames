@@ -1,6 +1,6 @@
-import {Component} from "@angular/core";
-import {VideojuegosService} from "../../services/videojuegos.service";
-import {ActivatedRoute} from "@angular/router";
+import { Component } from "@angular/core";
+import { VideojuegosService } from "../../services/videojuegos.service";
+import { ActivatedRoute } from "@angular/router";
 
 
 @Component({
@@ -13,10 +13,10 @@ export class VideojuegoComponent {
   videojuego: any = {};
 
   constructor(private _videojuegosService: VideojuegosService,
-              private activatedRoute: ActivatedRoute) {
+    private activatedRoute: ActivatedRoute) {
     this.activatedRoute.params.subscribe(params => {
       this.videojuego = this._videojuegosService.getVideojuego
-      (params['id']);
+        (params['id']);
     });
   }
 }

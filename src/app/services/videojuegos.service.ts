@@ -1,4 +1,5 @@
-import {Injectable} from "@angular/core";
+import { Injectable } from "@angular/core";
+import { BuscadorComponent } from "../components/buscador/buscador.component";
 
 @Injectable()
 export class VideojuegosService {

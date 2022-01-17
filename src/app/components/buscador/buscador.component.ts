@@ -1,8 +1,9 @@
-import {Component, OnInit} from '@angular/core';
-import {ActivatedRoute} from "@angular/router";
-import {VideojuegosService} from "../../services/videojuegos.service";
-import {Router} from "@angular/router";
-import {identity} from "rxjs";
+import { Component, Input, OnInit } from '@angular/core';
+import { ActivatedRoute } from "@angular/router";
+import { VideojuegosService } from "../../services/videojuegos.service";
+import { Router } from "@angular/router";
+
+
 
 
 @Component({
@@ -17,9 +18,10 @@ export class BuscadorComponent implements OnInit {
 
 
   constructor(private activatedRoute: ActivatedRoute,
-              private _videojuegosService: VideojuegosService,
-              private router: Router) {
-    this.termino = ""
+    private _videojuegosService: VideojuegosService,
+    private router: Router) {
+    this.termino = "";
+
   }
 
   ngOnInit() {
@@ -34,5 +36,7 @@ export class BuscadorComponent implements OnInit {
     this.router.navigate(['/videojuego/', idx]);
     console.log("se ejecuta esta vuelta");
   }
+
+
 
 }
